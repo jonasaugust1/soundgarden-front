@@ -59,27 +59,27 @@
                 </div>
                 <div>
                     <!-- - cadastro de evento (nome, atrações, descrição, horário, data, numero de ingressos) -->
-                    <form class="col-6">
+                    <form class="col-6" id="formulario">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" aria-describedby="nome" value="Lolla"
+                            <input type="text" class="form-control" id="nome" name="name" aria-describedby="nome" value="Lolla"
                                 disabled>
                         </div>
                         <div class="mb-3">
                             <label for="banner" class="form-label">Banner</label>
-                            <input type="text" class="form-control" id="banner" aria-describedby="banner"
+                            <input type="text" class="form-control" id="banner" name="poster" aria-describedby="banner"
                                 value="https://capricho.abril.com.br/wp-content/uploads/2021/11/lolla.jpg" disabled>
                             <small>adicione o link da imagem</small>
                         </div>
                         <div class="mb-3">
                             <label for="atracoes" class="form-label">Atrações</label>
                             <input type="text" class="form-control" id="atracoes" aria-describedby="atracoes"
-                                value="The Strokes, Paramore, Foo Fighters, Hiatus Kaiyote, Lianne La Havas " disabled>
+                                value="The Strokes, Paramore, Foo Fighters, Hiatus Kaiyote, Lianne La Havas " name="attractions" disabled>
                             <small>insira o nome dos artistas separados por vírgula</small>
                         </div>
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
-                            <textarea name="descricao" id="descricao" class="form-control" rows="5" disabled>Festival maneirissimo de jovens, com algumas bandas que a gente conhece e várias outras que nunca ouvimos falar! Cervejas com valores abusivos, muito sol e entorpecentes. uhuuuuuu
+                            <textarea name="description" id="descricao" class="form-control" rows="5" disabled>Festival maneirissimo de jovens, com algumas bandas que a gente conhece e várias outras que nunca ouvimos falar! Cervejas com valores abusivos, muito sol e entorpecentes. uhuuuuuu
                             </textarea>
                         </div>
                         <div class="mb-3">
@@ -90,9 +90,9 @@
                         <div class="mb-3">
                             <label for="lotacao" class="form-label">Lotação (número de ingressos disponiveis)</label>
                             <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao"
-                                value="100" disabled>
+                                value="100" name="number_tickets" disabled>
                         </div>
-                        <button type="submit" class="btn btn-danger">excluir pra sempre</button>
+                        <button type="submit" class="btn btn-danger" id="btDelete">excluir pra sempre</button>
                     </form>
                 </div>
             </main>
@@ -102,5 +102,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
-
+<script src="./script/excluirEvento.js"></script>
 </html>
