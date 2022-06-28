@@ -2,9 +2,6 @@ import formataData from './admin.js'
 
 const url = 'https://xp41-soundgarden-api.herokuapp.com/events'
 const div = document.querySelector('.eventsContainer')
-console.log(div)
-
-
 
 const requestAPI = async () => {
     try{
@@ -20,7 +17,7 @@ const requestAPI = async () => {
                         <h2>${jsonResponse[i].name} - ${formataData(jsonResponse[i].scheduled)}</h2>
                         <h4>${jsonResponse[i].attractions}</h4>
                         <p>${jsonResponse[i].description}</p>
-                        <button class="btn btn-primary reservar" type="button">reservar ingresso</button>
+                        <a href="#" class="btn btn-primary reservar" data-toggle="modal" data-target="#exampleModal">Reservar ingresso</a>
                     </article>
                 
                 </div>`
@@ -32,20 +29,3 @@ const requestAPI = async () => {
 }
 
 requestAPI()
-
-const reserveButton = document.querySelector('.reservar')
-reserveButton.addEventListener('show.bs.modal', event => {
-    // Button that triggered the modal
-  const button = event.relatedTarget
-  // Extract info from data-bs-* attributes
-  const recipient = button.getAttribute('data-bs-whatever')
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = exampleModal.querySelector('.modal-title')
-  const modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-  modalTitle.textContent = `New message to ${recipient}`
-  modalBodyInput.value = recipient
-})

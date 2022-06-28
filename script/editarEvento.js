@@ -6,17 +6,17 @@ let form = document.querySelector("#formulario");
 let receive = async () => {
     const response = await fetch(`${BASE_URL}/${ID_ATUAL}`)
   //EXTRAINDO O JSON
-  const jsonResponse = await response.json()
+    const jsonResponse = await response.json()
 //atribuindo os dados da respota nos inputs do html
-const formObject = new FormData(form)
-formObject.set('name') = jsonResponse.name
-formObject.set('poster') = jsonResponse.poster
-formObject.set('attractions') = jsonResponse.attractions
-formObject.set('description') = jsonResponse.description
-//new Date(inDate.value).toISOString()
-formObject.set('data') = jsonResponse.scheduled
-formObject.set('number_tickets') = parseInt(jsonResponse.number_tickets)
-}
+    const formObject = new FormData(form)
+    formObject.set('name') = jsonResponse.name
+    formObject.set('poster') = jsonResponse.poster
+    formObject.set('attractions') = jsonResponse.attractions
+    formObject.set('description') = jsonResponse.description
+    //new Date(inDate.value).toISOString()
+    formObject.set('data') = jsonResponse.scheduled
+    formObject.set('number_tickets') = parseInt(jsonResponse.number_tickets)
+    }
 
 receive();
 

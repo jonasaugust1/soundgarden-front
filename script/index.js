@@ -2,9 +2,6 @@ import formataData from './admin.js'
 
 const url = 'https://xp41-soundgarden-api.herokuapp.com/events'
 const div = document.querySelector('#eventsContainer')
-console.log(div)
-
-
 
 const requestAPI = async () => {
     try{
@@ -12,7 +9,6 @@ const requestAPI = async () => {
         if(response.ok){
             console.log("Request successful")
             const jsonResponse = await response.json()
-            console.log(jsonResponse[0].name)
             let items = 0
             while(items < 3){
                 div.innerHTML +=
@@ -21,7 +17,7 @@ const requestAPI = async () => {
                         <h2>${jsonResponse[items].name} - ${formataData(jsonResponse[items].scheduled)}</h2>
                         <h4>${jsonResponse[items].attractions}</h4>
                         <p>${jsonResponse[items].description}</p>
-                        <a href="#" class="btn btn-primary reservar">reservar ingresso</a>
+                        <a href="#" class="btn btn-primary reservar" data-toggle="modal" data-target="#exampleModal">reservar ingresso</a>
                     </article>
                 
                 </div>`
