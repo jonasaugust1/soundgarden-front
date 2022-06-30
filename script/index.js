@@ -1,11 +1,13 @@
 import formataData from './admin.js'
 
-const url = 'https://xp41-soundgarden-api.herokuapp.com/events'
+const getUrl = 'https://xp41-soundgarden-api.herokuapp.com/events'
 const div = document.querySelector('#eventsContainer')
+
+
 
 const requestAPI = async () => {
     try{
-        const response = await fetch(url)
+        const response = await fetch(getUrl)
         if(response.ok){
             console.log("Request successful")
             const jsonResponse = await response.json()
@@ -17,11 +19,10 @@ const requestAPI = async () => {
                         <h2>${jsonResponse[items].name} - ${formataData(jsonResponse[items].scheduled)}</h2>
                         <h4>${jsonResponse[items].attractions}</h4>
                         <p>${jsonResponse[items].description}</p>
-                        <a href="#" class="btn btn-primary reservar" data-toggle="modal" data-target="#exampleModal">reservar ingresso</a>
+                        <button type="button" data-bs-whatever="${(jsonResponse[items]._id) * 2}" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">reservar ingresso</button>
                     </article>
-                
                 </div>`
-
+                
                 items++
             }
         }
@@ -31,30 +32,46 @@ const requestAPI = async () => {
 }
 
 requestAPI()
-// const eventAtractions = events.map( i => i.attractions)
 
-// const eventDescriptionArray = events.map( i => i.description)
+const bookingsUrl = 'https://xp41-soundgarden-api.herokuapp.com/bookings'
 
-// let random1 = Math.floor(Math.random() * eventsNames.length)
-// let eventTitle1 = document.querySelector('#card1 h2')
-// let eventLineup1 = document.querySelector('#card1  h4')
-// let eventDescription1 = document.querySelector('#card1  p')
-// eventTitle1.innerHTML = eventsNames[random1]
-// eventLineup1.innerHTML = eventAtractions[random1]
-// eventDescription1.innerHTML = eventDescriptionArray[random1]
-
-// let random2 = Math.floor(Math.random() * eventsNames.length)
-// let eventTitle2 = document.querySelector('#card2 h2')
-// let eventLineup2 = document.querySelector('#card2 h4')
-// let eventDescription2 = document.querySelector('#card2 p')
-// eventTitle2.innerHTML = eventsNames[random2]
-// eventLineup2.innerHTML = eventAtractions[random2]
-// eventDescription2.innerHTML = eventDescriptionArray[random2]
-
-// let random3 = Math.floor(Math.random() * eventsNames.length)
-// let eventTitle3 = document.querySelector('#card3 h2')
-// let eventLineup3 = document.querySelector('#card3 h4')
-// let eventDescription3 = document.querySelector('#card3 p')
-// eventTitle3.innerHTML = eventsNames[random3]
-// eventLineup3.innerHTML = eventAtractions[random3]
-// eventDescription3.innerHTML = eventDescriptionArray[random3]
+let exampleModal = document.getElementById('exampleModal')
+console.log(exampleModal)
+exampleModal.addEventListener('show.bs.modal', event => {
+    // Button that triggered the modal
+    let button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    let recipient = button.getAttribute('data-bs-whatever')
+    console.log(recipient)
+    
+    const form = document.querySelector(".modal-dialog form")
+    
+    form.onsubmit = async (evento) => {
+        evento.preventDefault();
+        try {
+            const formObject = new FormData(form)
+            const newBooking = {
+                owner_name: formObject.get('name'),
+                owner_email: formObject.get('email'),
+                number_tickets: formObject.get('tickets'),
+                event_id: recipient,
+            };
+            const options = {
+                method: "POST",
+                body: JSON.stringify(newBooking),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+        };
+        const response = await fetch(bookingsUrl, options);
+                            const jsonResponse = await response.json();
+                            console.log(newBooking);
+                            console.log(response);
+                            console.log(jsonResponse);
+                            alert('Ingressos para o evento reservados com sucesso!')
+                            return window.location.href = "index.html"
+    } catch (erro) {
+        alert('Erro ao cadastrar, verifique os campos digitados!')
+    }
+    }
+})

@@ -13,7 +13,6 @@ let receive = async () => {
     formObject.set('poster') = jsonResponse.poster
     formObject.set('attractions') = jsonResponse.attractions
     formObject.set('description') = jsonResponse.description
-    //new Date(inDate.value).toISOString()
     formObject.set('data') = jsonResponse.scheduled
     formObject.set('number_tickets') = parseInt(jsonResponse.number_tickets)
     }
