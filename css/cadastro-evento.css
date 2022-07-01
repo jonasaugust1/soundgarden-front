@@ -1,0 +1,160 @@
+@media (max-width: 575.98px) {
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .row aside {
+        width: 100vw;
+        margin-bottom: -320px;
+    }
+  
+    aside.bg-light {
+      background-color: #ffffff !important;
+    }
+  
+    .row aside img {
+        width: 80px;
+        height: auto;
+    }
+  
+    .row aside a {
+        margin: 0 auto;
+    }
+  
+   
+  
+    .row aside a svg {
+        display: none;
+    }
+  
+    .row aside ul {
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+  
+    main {
+        width: 100vw !important;
+    }
+  
+  
+    main > .my-5 > h1 {
+      text-align: center;
+      font-size: 1.3rem ;
+      
+  }
+  
+  form#formulario.col-6 {
+    width: 100%;
+    }
+  
+  }
+  
+  
+  
+  
+  @media (min-width: 576px) and (max-width: 767.98px){
+  
+      .row {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .row aside {
+          width: 100vw;
+          margin-bottom: -320px;
+      }
+  
+      aside.bg-light {
+        background-color: #ffffff !important;
+      }
+  
+      .row aside img {
+          width: 80px;
+          height: auto;
+      }
+  
+      .row aside a {
+          margin: 0 auto;
+      }
+  
+      .row aside a svg {
+          display: none;
+      }
+  
+      .row aside ul {
+          margin-bottom: 0 !important;
+          text-align: center;
+      }
+  
+      main {
+          width: 100vw !important;
+      }
+  
+  
+      main > .my-5 > h1 {
+        text-align: center;
+        font-size: 1.3rem ;
+        
+    }
+  
+    form#formulario.col-6 {
+      width: 100%;
+      }
+    
+  }
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+  
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .row aside {
+        width: 100vw;
+        margin-bottom: -720px;
+    }
+  
+    aside.bg-light {
+      background-color: #ffffff !important;
+    }
+  
+  
+    .row aside img {
+        width: 80px;
+        height: auto;
+    }
+  
+    .row aside a {
+        margin: 0 auto;
+    }
+  
+    .row aside a svg {
+        display: none;
+    }
+  
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+      width: 30%;
+  
+    }
+  
+    .row aside ul {
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+  
+    main {
+        width: 100vw !important;
+    }
+  
+    main > .my-5 > h1 {
+      text-align: center;
+      font-size: 2rem ;
+      
+    }
+  
+      form#formulario.col-6 {
+        width: 100%;
+        }
+  }

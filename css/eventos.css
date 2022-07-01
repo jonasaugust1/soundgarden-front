@@ -1,0 +1,57 @@
+@media (max-width: 575px) {
+    .container.text-center h2 {
+      font-weight: bolder;
+    }
+    
+    div.container.d-flex.justify-content-center.align-items-center {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+  
+    article.evento {
+        display: flex;
+        align-items: center;
+        flex-direction:column;
+        flex-wrap: wrap;
+        width: 90%;
+        
+    }
+  
+    article.evento h2, h4 {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: bolder;
+    }
+  
+    article.evento p {
+        font-size: 1rem;
+    }
+  
+    .col h2 {
+      text-align: center;
+    }
+  
+    .col p {
+      margin-left: 15px;
+        font-size: 1rem;
+        text-align: justify;
+        width: 300px;
+        word-wrap: break-word;
+  
+    }
+  
+    .col img {
+        display: none;
+    }
+  
+    footer > div {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+  
+    footer > div nav ul li a {
+        text-align: center;
+    }
+  }
